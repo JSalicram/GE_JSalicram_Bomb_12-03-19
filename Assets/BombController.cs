@@ -33,7 +33,7 @@ public class BombController : MonoBehaviour {
     }
 
     /*
-    Collider2D[] collidersInBombRadius = Physics2D.OverlapCircleAll(Transform.position, )
+    Collider2D[] collidersInBombRadius = Physics2D.OverlapCircleAll(Transform.position, bombPos, bombRadius)
     {
         for(int i = 0; i<collidersInBombRadius, i++)
         {
@@ -42,5 +42,7 @@ public class BombController : MonoBehaviour {
                 Destroy(colliderInBombRadius[i].gameobject);
             }
         }
+        //hide sprite, start particle effect
+        //at end of particle effect destroy bomb
     }*/
 }

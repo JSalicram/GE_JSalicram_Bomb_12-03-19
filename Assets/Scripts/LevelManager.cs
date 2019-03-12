@@ -25,6 +25,8 @@ public class LevelManager : MonoBehaviour {
             //Debug.Log("triggered");
             Timer();
         }
+
+        //could make array of all items that have entered and not exited the trigger zone using LevelItemTrigger script
     }
 
     public void Timer()
