@@ -8,6 +8,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
     public static LevelManager instance;
+    public BombController bombCtrl;
+    private bool triggered;
 
     private void Awake()
     {
@@ -18,15 +20,22 @@ public class LevelManager : MonoBehaviour {
 
     public void OnLevelItemTriggerEnter(Collider2D otherColliderInCollision, LevelItemTrigger itemInCollision)
     {
-        if(otherColliderInCollision.name == "Character" && itemInCollision.name == "Bomb")
+        if(otherColliderInCollision.name == "Character" && itemInCollision.name == "Bomb" && triggered == false)
         {
-            Debug.Log("triggered");
-            Explode();
+            //Debug.Log("triggered");
+            Timer();
         }
+    }
+
+    public void Timer()
+    {
+        //Debug.Log("timing");
+        triggered = true;
+        StartCoroutine(bombCtrl.ExplodeCoroutine());
     }
 
     public void Explode()
     {
-
+        triggered = false;
     }
 }
